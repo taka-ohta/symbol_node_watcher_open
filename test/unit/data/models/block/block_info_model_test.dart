@@ -1,0 +1,67 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:symbol_node_watcher/data/models/block/block_info_model.dart';
+
+void main() {
+  group('block_info_model', () {
+    test('JSONからの変換', () {
+      var model = BlockInfoModel.fromJson({
+        "meta": {
+          "hash":
+              "40161B431252F9706E65B661115570A13BA4A0403E3A23305C27A8FC6322935F",
+          "generationHash":
+              "FFFF9899AAE4404B16F691C1850659672BE87B01DF06EFD5A7E578F42303AF06",
+          "totalFee": "1999869",
+          "totalTransactionsCount": 1,
+          "stateHashSubCacheMerkleRoots": [
+            "AB8241C6BD3942B4DB1CB2364FC9079262602F49F9E64AE713397B593A19E97F",
+            "EB2BAAB6F611E3284B7A1381460E391073989BC46CC81A0AD7D0A1F425EED73D",
+            "0BC89A918702A79347B3A36355CC791DF2EC4CB105D12D50859498FD8A161784",
+            "4839F234B5747BA07B50F9128E0A22DB078B230B3EDDDACFB8BB98033AD2573B",
+            "B77D54DD006851FEB3EFF318D890DED21B6F110C5837D9F747096CF505B68A18",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "A205D05A5EF0C5626D20B0E338F6F463A72A88B5C19A51C7ED274B39B5E262DB",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "1F580B997DDC658E45DE8F928A21066CEB1986EAF2449FEC6F07F43F93CC7096"
+          ],
+          "transactionsCount": 1,
+          "statementsCount": 1
+        },
+        "block": {
+          "size": 557,
+          "signature":
+              "00FA4A7F98F44C8EF6809429FD181140F2F975B83CFF771DC806910347069C3FD80ABBDC2134262EF51861227C0E4767D84B3D246634115F2A3DE77929931D02",
+          "signerPublicKey":
+              "54F7FCB0678B1CFDC7A192BE0F170DC5E8C7D276FCBD678E1BDF647AE0236F6D",
+          "version": 1,
+          "network": 104,
+          "type": 33091,
+          "height": "136848",
+          "timestamp": "4192108849",
+          "difficulty": "95519239557559",
+          "proofGamma":
+              "9A3E0A198599ECC2591675AB7D3097D829DC289DADA9D2E60A44CD85E4786F60",
+          "proofVerificationHash": "8D035565523029C3866A612F0D66CAB6",
+          "proofScalar":
+              "ACB6122B7E1D4A1EC9D06B14DA91A61F3D50101A542DC22822D848B5DE36A80B",
+          "previousBlockHash":
+              "5A83B35AB60D55A52CB55BA793DCAA7EBD93331E7DAC0CECD936024E1B10E880",
+          "transactionsHash":
+              "04ECFA4F7582C15FF1E7D93AE4F35F02B558072117ACEECE4131A6A1CC3FCCDC",
+          "receiptsHash":
+              "F0690B681691EF5FBFEE8A235830AA71F4860EFA6EE8E59BCE29EBBF4F72B411",
+          "stateHash":
+              "B23191B4377F956D512509A89FE9A2BC8E73B38CF1EE65979234C195F5C8B434",
+          "beneficiaryAddress":
+              "689314BECD63248727B9E3A40BEA8E66AC0FD60C2826FFA8",
+          "feeMultiplier": 11049
+        },
+        "id": "608FEDED440662283065A485"
+      });
+      expect(model.height, BigInt.from(136848));
+      expect(
+        model.timestamp.millisecondsSinceEpoch,
+        1615853185000 + 4192108849,
+      );
+    });
+  });
+}

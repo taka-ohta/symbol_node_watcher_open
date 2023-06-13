@@ -1,0 +1,25 @@
+### ノード情報取得
+GET http://xym424.allnodes.me:3000/node/info
+Content-Type: application/json
+
+### アカウント情報取得
+GET http://xym424.allnodes.me:3000/accounts/FECDEE578EBC5810420C1068B3B46D4ED11C9F66EA9390D5201CEA10FE42037D
+Content-Type: application/json
+
+### UnlockedAccount取得
+GET http://xym424.allnodes.me:3000/node/unlockedaccount
+Content-Type: application/json
+
+### ハーベスト手数料取得(ページング)
+### アドレスは上記で取得したアドレスをhttps://emn178.github.io/online-tools/base32_encode.htmlで変換
+### offsetを指定すると、ascの場合以降の分が、descの場合以前の分が返ってくる
+GET http://xym424.allnodes.me:3000/statements/transaction?receiptType=8515&targetAddress=NCJRJPWNMMSIOJ5Z4OSAX2UOM2WA7VQMFATP7KA&order=desc
+Content-Type: application/json
+
+### ブロック情報取得
+GET http://xym424.allnodes.me:3000/blocks/133999
+Content-Type: application/json
+
+### ネットワーク情報取得
+GET http://api01.kitsutsuki.tokyo:3000/network/properties
+Content-Type: application/json

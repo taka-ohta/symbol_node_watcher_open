@@ -1,0 +1,54 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:symbol_node_watcher/data/models/account/unlocked_account_list_model.dart';
+
+void main() {
+  group('unlocked_account_list_model_test', () {
+    test('JSONからの変換', () {
+      var model = UnlockedAccountListModel.fromJson({
+        "unlockedAccount": [
+          "979D6A42269F92DE524267FA4196AFD3BD94A938400E23970D9786D7DE92B253",
+          "83E16E9D60DEFA64E793B562D1AEDAE77F014FE35D85ADD9E0B8E0709E477D9A",
+          "AAB48FE16CA9DE99B19E4CFFB7405CD1B25B89333A12F213319E62320F40B24D",
+          "3E898CBCCE3E1F961EFCF8E9496283DEB20203828449ED792F4AF11417E56A3B",
+          "54F7FCB0678B1CFDC7A192BE0F170DC5E8C7D276FCBD678E1BDF647AE0236F6D",
+          "0324A5159397E7EF2159F0B4ACB7D91DA50F213E5F17AD97696E3B81959FCDA1",
+          "7B1FA1973C47AD4662C5031A8D288C265853FAC8E5C91593F4E750891EB23E56",
+          "F528F8B3BC4F69885312724149F95FA2C10EE3B6BDE22E3CF647ACD1B33EACB0"
+        ]
+      });
+      expect(model.accounts.length, 8);
+      expect(
+        model.accounts[0].publicKey,
+        '979D6A42269F92DE524267FA4196AFD3BD94A938400E23970D9786D7DE92B253',
+      );
+      expect(
+        model.accounts[1].publicKey,
+        '83E16E9D60DEFA64E793B562D1AEDAE77F014FE35D85ADD9E0B8E0709E477D9A',
+      );
+      expect(
+        model.accounts[2].publicKey,
+        'AAB48FE16CA9DE99B19E4CFFB7405CD1B25B89333A12F213319E62320F40B24D',
+      );
+      expect(
+        model.accounts[3].publicKey,
+        '3E898CBCCE3E1F961EFCF8E9496283DEB20203828449ED792F4AF11417E56A3B',
+      );
+      expect(
+        model.accounts[4].publicKey,
+        '54F7FCB0678B1CFDC7A192BE0F170DC5E8C7D276FCBD678E1BDF647AE0236F6D',
+      );
+      expect(
+        model.accounts[5].publicKey,
+        '0324A5159397E7EF2159F0B4ACB7D91DA50F213E5F17AD97696E3B81959FCDA1',
+      );
+      expect(
+        model.accounts[6].publicKey,
+        '7B1FA1973C47AD4662C5031A8D288C265853FAC8E5C91593F4E750891EB23E56',
+      );
+      expect(
+        model.accounts[7].publicKey,
+        'F528F8B3BC4F69885312724149F95FA2C10EE3B6BDE22E3CF647ACD1B33EACB0',
+      );
+    });
+  });
+}
